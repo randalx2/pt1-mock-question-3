@@ -22,6 +22,7 @@ private:
 	int num;				// numerator;
 	int denom;				// denominator;
 public:
+	Fraction(){ num = 1; denom = 1; }  //Added a default constructor
 	Fraction(int n, int d) : num(n), denom(d) { };
 	~Fraction(){};
 	void print() { cout << num << "/" << denom; };
@@ -36,4 +37,29 @@ public:
 		}
 		return temp;
 	}
+
+	Fraction add(int n, Fraction f)  //Overloading fraction and integer addition
+	{
+		num = n*f.denom + n*f.num;
+		denom = n*f.denom;
+
+		return Fraction(num, denom); 		
+	}
+
+	Fraction add(Fraction f, int n)
+	{
+		num = n*f.denom + n*f.num;
+		denom = n*f.denom;
+
+		return Fraction(num, denom);
+	}
 };
+
+//Designing main driver code
+
+int main()
+{
+
+	system("PAUSE");
+	return 0;
+}
