@@ -25,7 +25,7 @@ public:
 	Fraction(){ num = 1; denom = 1; }  //Added a default constructor
 	Fraction(int n, int d) : num(n), denom(d) { };
 	~Fraction(){};
-	void print() { cout << num << "/" << denom; };
+	void print() { cout << num << "/" << denom << endl; };
 
 	//overloading the greater than operator as non member function using friendship
 	friend bool operator > (Fraction f1, Fraction f2){
@@ -59,6 +59,31 @@ public:
 
 int main()
 {
+	//Demonstrating the greater than overloading operator
+	Fraction f1(1, 2);
+	f1.print();
+
+	Fraction f2(1, 4);
+	f2.print();
+
+	Fraction f3;
+	f3.print();
+
+	if (f1 > f2)
+	{
+		cout << "Fraction f1 is greater than f2" << endl;
+	}
+	else
+	{
+		cout << "Fraction f2 is less than or equal to f1" << endl;
+	}
+
+	//Demonstrating addition functions
+	f1.add(1, f2);
+	f1.print();
+
+	f2.add(2, f1);
+	f2.print();
 
 	system("PAUSE");
 	return 0;
