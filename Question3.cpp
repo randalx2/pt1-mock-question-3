@@ -1,8 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 //                         COMPUTER METHODS 3 PRACTICAL TEST 1 (MOCK)
-// Name:
-// Student No:
-// Date: 
+// Name: Praneel Misthry
+// Student No: 202515355
+// Date: 16 March 2016
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 #include <iostream>
 
@@ -22,6 +22,18 @@ private:
 	int num;				// numerator;
 	int denom;				// denominator;
 public:
-	Fraction(int n, int d) : num(n), denum(d) { };
+	Fraction(int n, int d) : num(n), denom(d) { };
+	~Fraction(){};
 	void print() { cout << num << "/" << denom; };
+
+	//overloading the greater than operator as non member function using friendship
+	friend bool operator > (Fraction f1, Fraction f2){
+		bool temp = 0;
+		if (f1.num*f2.denom > f2.num*f1.denom)
+		{
+			temp = 1;
+			return temp;
+		}
+		return temp;
+	}
 };
