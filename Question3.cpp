@@ -40,18 +40,20 @@ public:
 
 	Fraction add(int n, Fraction f)  //Overloading fraction and integer addition
 	{
-		num = n*f.denom + n*f.num;
-		denom = n*f.denom;
+		Fraction temp;
+		temp.num = n*f.denom + f.num;
+		temp.denom = f.denom;
 
-		return Fraction(num, denom); 		
+		return temp; 		
 	}
 
 	Fraction add(Fraction f, int n)
 	{
-		num = n*f.denom + n*f.num;
-		denom = n*f.denom;
+		Fraction temp;
+		temp.num = n*f.denom + f.num;
+		temp.denom = f.denom;
 
-		return Fraction(num, denom);
+		return temp;
 	}
 };
 
@@ -79,11 +81,14 @@ int main()
 	}
 
 	//Demonstrating addition functions
-	f1.add(1, f2);
-	f1.print();
+	f3 = f1.add(1, f2);
+	f3.print();
 
-	f2.add(2, f1);
-	f2.print();
+	f3 = f2.add(2, f1);
+	f3.print();
+
+	f3 = f1.add(1, f2);
+	f3.print();
 
 	system("PAUSE");
 	return 0;
