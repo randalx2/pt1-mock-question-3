@@ -40,20 +40,32 @@ public:
 
 	Fraction add(int n, Fraction f)  //Overloading fraction and integer addition
 	{
-		Fraction temp;
+		/*Fraction temp;
 		temp.num = n*f.denom + f.num;
-		temp.denom = f.denom;
+		temp.denom = f.denom;*/
 
-		return temp; 		
+		int tnum, tden;
+		tnum = n*f.denom + f.num;
+		tden = f.denom;
+
+		return Fraction (tnum, tden); 		
 	}
 
 	Fraction add(Fraction f, int n)
 	{
-		Fraction temp;
+		/*Fraction temp;
 		temp.num = n*f.denom + f.num;
 		temp.denom = f.denom;
 
-		return temp;
+		return temp;*/   //NB THIS METHOD IS ALSO CORRECT
+
+		int tnum, tden;
+		tnum = n*f.denom + f.num;
+		tden = f.denom;               //This method is preferable if you have to call a gcd function
+		                              //for the numerator and denominar as you would need both to be available already
+
+		return Fraction(tnum, tden);
+
 	}
 };
 
